@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Item struct{
 	name string
 	price float64
@@ -14,11 +16,17 @@ func (p * Product) statusChanger(){
 	p.security = !p.security
 }
 
-// func checkOut(ps * []Product)  {
-// 	for _ , v := range Product{
-// 		v.
-// 	}
-// }
+func checkOut(ps []Product)  {
+	for i := 0; i < len(ps); i++ {
+		ps[i].statusChanger()
+	}
+}
+
+func printData(ps []Product){
+	for i := 0; i < len(ps); i++ {
+		fmt.Println(ps[i])
+	}
+}
 
 const (
 	inactive = false
@@ -35,4 +43,27 @@ func main(){
 		},
 		security: active,
 	}
+	items[1] = Product{
+		item: Item{
+			name : "ps5",
+			price: 2000.0,
+		},
+		security: active,
+	}
+	items[0] = Product{
+		item: Item{
+			name : "iphone",
+			price: 2000.0,
+		},
+		security: active,
+	}
+	items[0] = Product{
+		item: Item{
+			name : "mac",
+			price: 2000.0,
+		},
+		security: active,
+	}
+
+	checkOut(items)
 }
