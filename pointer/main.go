@@ -50,20 +50,21 @@ func main(){
 		},
 		security: active,
 	}
-	items[0] = Product{
+	items[2] = Product{
 		item: Item{
 			name : "iphone",
 			price: 2000.0,
 		},
 		security: active,
 	}
-	items[0] = Product{
+	items[3] = Product{
 		item: Item{
 			name : "mac",
 			price: 2000.0,
 		},
 		security: active,
 	}
-
+	printData(items)
 	checkOut(items)
+	printData(items)
 }
